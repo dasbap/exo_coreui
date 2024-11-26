@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>Base Annonces</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/examples.css" rel="stylesheet">
+    <script src="js/config.js"></script>
+    <script src="js/color-modes.js"></script>
+    <link href="node_modules/@coreui/chartjs/dist/css/coreui-chartjs.css" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/simplebar/dist/simplebar.css">
+</head>
+
+<body>
+    <div class="sidebar sidebar-dark sidebar-fixed border-end" style="overflow-y: auto;" id="sidebar">
+        <div class="sidebar-header border-bottom">
+            <div class="sidebar-brand">
+                <img src="assets/img/logo.png" width="150" height="50" alt="logo random">
+            </div>
+            <button class="btn-close d-lg-none" type="button" data-coreui-dismiss="offcanvas" aria-label="Close" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()"></button>
+        </div>
+        <div>
+            <ul class="sidebar-nav" data-coreui="navigation" data-simplebar>
+                <!-- Catégorie : Informations -->
+                <li class="nav-title">Informations</li>
+                <li class="nav-item"><a class="nav-link" href="actualites.html">Actualités</a></li>
+                
+                <!-- Catégorie : Gestion des Clients -->
+                <li class="nav-title">Gestion des Clients</li>
+                <li class="nav-item"><a class="nav-link" href="base_clients.html">Base Clients</a></li>
+                <li class="nav-item"><a class="nav-link" href="base_annonces.html">Base Annonces</a></li>
+                
+                <!-- Catégorie : Communication -->
+                <li class="nav-title">Communication</li>
+                <li class="nav-item"><a class="nav-link" href="chat.html">Chat et appels</a></li>
+                
+                <!-- Catégorie : Outils -->
+                <li class="nav-title">Outils</li>
+                <li class="nav-item"><a class="nav-link" href="calendrier.html">Calendrier</a></li>
+                <li class="nav-item"><a class="nav-link" href="mes_ventes.html">Mes ventes</a></li>
+                <li class="nav-item"><a class="nav-link" href="centre_contact.html">Centre de contact</a></li>
+                
+                <!-- Catégorie : Analytique -->
+                <li class="nav-title">Analytique</li>
+                <li class="nav-item"><a class="nav-link" href="analytique.html">Analytique</a></li>
+            </ul>
+        </div>
+        
+        <div class="sidebar-footer border-top d-none d-md-flex" style="display: flex; justify-content: flex-start; align-items: end; margin-top: auto;">
+            <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+        </div>
+        
+    </div>
+
+    <div class="wrapper d-flex flex-column min-vh-100">
+        <header class="header header-sticky p-0 mb-4">
+            <div class="container-fluid border-bottom px-4">
+                <button class="header-toggler" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+                    <svg class="icon icon-lg">
+                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-menu"></use>
+                    </svg>
+                </button>
+                <ul class="header-nav d-none d-lg-flex">
+                    <li class="nav-item"><a class="nav-link" href="actualites.html">Actualités</a></li>
+                    <li class="nav-item"><a class="nav-link" href="base_clients.html">Base Clients</a></li>
+                    <li class="nav-item"><a class="nav-link" href="base_annonces.html">Base Annonces</a></li>
+                    <li class="nav-item"><a class="nav-link" href="chat.html">Chat et appels</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calendrier.html">Calendrier</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mes_ventes.html">Mes ventes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="centre_contact.html">Centre de contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="analytique.html">Analytique</a></li>
+                </ul>
+                <br>
+                
+                <ul class="header-nav ms-auto">
+                    
+                    <li class="nav-item"><a class="nav-link">
+                        <svg class="icon icon-lg">
+                            <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-bell"></use>
+                        </svg></a></li>
+                    <li class="nav-item"><a class="nav-link" >
+                        <svg class="icon icon-lg">
+                            <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-list-rich"></use>
+                        </svg></a></li>
+                    <li class="nav-item"><a class="nav-link">
+                        <svg class="icon icon-lg">
+                            <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-envelope-open"></use>
+                        </svg></a></li>
+                </ul>
+                <ul class="header-nav">
+                    <li class="nav-item py-1">
+                        <div class="vr h-100 mx-2 text-body text-opacity-75"></div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-link nav-link py-2 px-2 d-flex align-items-center" type="button" aria-expanded="false" data-coreui-toggle="dropdown">
+                            <svg class="icon icon-lg theme-icon-active">
+                                <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-contrast"></use>
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" style="--cui-dropdown-min-width: 8rem;">
+                            <li>
+                                <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="light">
+                                    <svg class="icon icon-lg me-3">
+                                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-sun"></use>
+                                    </svg>Light
+                                </button>
+                            </li>
+                            <li>
+                                <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="dark">
+                                    <svg class="icon icon-lg me-3">
+                                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-moon"></use>
+                                    </svg>Dark
+                                </button>
+                            </li>
+                            <li>
+                                <button class="dropdown-item d-flex align-items-center active" type="button" data-coreui-theme-value="auto">
+                                    <svg class="icon icon-lg me-3">
+                                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-contrast"></use>
+                                    </svg>Auto
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item py-1">
+                        <div class="vr h-100 mx-2 text-body text-opacity-75"></div>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link py-0 pe-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <div class="avatar avatar-md"><img class="avatar-img" src="assets/img/avatars/8.jpg" alt="user@email.com"></div></a>
+                        <div class="dropdown-menu dropdown-menu-end pt-0">
+                            <div class="dropdown-header bg-body text-center"><strong>Mon compte</strong></div>
+                            <a class="dropdown-item">
+                                <svg class="icon icon-lg"> 
+                                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-bell"></use>
+                                </svg> Notificatipon
+                            </a>
+                            
+                            <a class="dropdown-item">
+                                <svg class="icon icon-lg"> 
+                                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-group"></use>
+                                </svg> Chat et appels
+                            </a>
+                            
+                            <a class="dropdown-item">
+                                <svg class="icon icon-lg"> 
+                                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-list-rich"></use>
+                                </svg> Calendrier
+                            </a>
+
+                            <a class="dropdown-item">
+                                <svg class="icon icon-lg"> 
+                                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-balance-scale"></use>
+                                </svg> Mes ventes
+                            </a>
+
+                            </a>
+                            <div class="dropdown-header bg-body text-center"><strong>Paramètres</strong></div>
+                            
+
+                            <a class="dropdown-item"> 
+                                <svg class="icon me-2">
+                                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-user"></use>
+                                </svg>Profil
+                            </a>
+
+                            <a class="dropdown-item">
+                                <svg class="icon me-2">
+                                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-lock-locked"></use>
+                                </svg>Déconnexion
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div style="position: relative; left: 45%;">
+                <a href="actualites.html">Actualités</a> / <a href="base_annonces.html">Base Annonces</a> 
+            </div>
+        </header>
+
+
+        <div class="body flex-grow-1 px-3">
+            <div class="container-lg" style="min-width: 620px;">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4 class="card-title">Base Annonces</h4>
+                        <a class="btn btn-primary float-end" href="ajouter_annonce.html">Ajouter Annonce</a>
+                    </div>
+                    <div class="card-body">
+                        <!-- Formulaire de recherche -->
+                        <form id="search-form" class="mb-4">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <input type="text" class="form-control" id="titre" placeholder="Titre">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <input type="text" class="form-control" id="categorie" placeholder="Catégorie">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <input type="date" class="form-control" id="date-publication" placeholder="Date de publication">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Rechercher</button>
+                        </form>
+
+                        <!-- Tableau des annonces -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Titre</th>
+                                    <th>Catégorie</th>
+                                    <th>Date de publication</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="annonces-list">
+                                <tr>
+                                    <td>1</td>
+                                    <td>Annonce 1</td>
+                                    <td>Immobilier</td>
+                                    <td>2024-10-02</td>
+                                    <td>
+                                        <a href="modifier_annonce.html?id=1" class="btn btn-warning btn-sm">Modifier</a>
+                                        <button class="btn btn-danger btn-sm" onclick="confirmDeletion(1)">Supprimer</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Annonce 2</td>
+                                    <td>Automobile</td>
+                                    <td>2024-09-30</td>
+                                    <td>
+                                        <a href="modifier_annonce.html?id=2" class="btn btn-warning btn-sm">Modifier</a>
+                                        <button class="btn btn-danger btn-sm" onclick="confirmDeletion(2)">Supprimer</button>
+                                    </td>
+                                </tr>
+                                <!-- Autres annonces ici -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row justify-content-between">
+                    <div class="col-auto">© 2024 Random Company</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
+    <script>
+        // Fonction pour confirmer la suppression d'une annonce
+        function confirmDeletion(annonceId) {
+            if (confirm("Êtes-vous sûr de vouloir supprimer cette annonce ?")) {
+                console.log("Annonce " + annonceId + " supprimée.");
+            }
+        }
+
+        // Filtrage des annonces
+        document.getElementById('search-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const titre = document.getElementById('titre').value.toLowerCase();
+            const categorie = document.getElementById('categorie').value.toLowerCase();
+            const date = document.getElementById('date-publication').value;
+
+            const annoncesList = document.getElementById('annonces-list');
+            const rows = annoncesList.getElementsByTagName('tr');
+
+            for (const row of rows) {
+                const annonceTitre = row.cells[1].textContent.toLowerCase();
+                const annonceCategorie = row.cells[2].textContent.toLowerCase();
+                const annonceDate = row.cells[3].textContent;
+
+                if ((titre && !annonceTitre.includes(titre)) || 
+                    (categorie && !annonceCategorie.includes(categorie)) || 
+                    (date && annonceDate !== date)) {
+                    row.style.display = 'none';
+                } else {
+                    row.style.display = '';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

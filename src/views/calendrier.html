@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="Calendrier">
+    <title>Calendrier</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/examples.css" rel="stylesheet">
+    <script src="js/config.js"></script>
+    <script src="js/color-modes.js"></script>
+    <link href="node_modules/@coreui/chartjs/dist/css/coreui-chartjs.css" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/simplebar/dist/simplebar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+</head>
+
+<body>
+    <div class="sidebar sidebar-dark sidebar-fixed border-end" style="overflow-y: auto;" id="sidebar">
+        <div class="sidebar-header border-bottom">
+            <div class="sidebar-brand">
+                <img src="assets/img/logo.png" width="150" height="50" alt="logo random">
+            </div>
+            <button class="btn-close d-lg-none" type="button" data-coreui-dismiss="offcanvas" aria-label="Close" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()"></button>
+        </div>
+        <div>
+            <ul class="sidebar-nav" data-coreui="navigation" data-simplebar>
+                <li class="nav-title">Informations</li>
+                <li class="nav-item"><a class="nav-link" href="actualites.html">Actualités</a></li>
+                <li class="nav-title">Gestion des Clients</li>
+                <li class="nav-item"><a class="nav-link" href="base_clients.html">Base Clients</a></li>
+                <li class="nav-item"><a class="nav-link" href="base_annonces.html">Base Annonces</a></li>
+                <li class="nav-title">Communication</li>
+                <li class="nav-item"><a class="nav-link" href="chat.html">Chat et appels</a></li>
+                <li class="nav-title">Outils</li>
+                <li class="nav-item"><a class="nav-link" href="calendrier.html">Calendrier</a></li>
+                <li class="nav-item"><a class="nav-link" href="mes_ventes.html">Mes ventes</a></li>
+                <li class="nav-item"><a class="nav-link" href="centre_contact.html">Centre de contact</a></li>
+                <li class="nav-title">Analytique</li>
+                <li class="nav-item"><a class="nav-link" href="analytique.html">Analytique</a></li>
+            </ul>
+        </div>
+        
+        <div class="sidebar-footer border-top d-none d-md-flex" style="display: flex; justify-content: flex-start; align-items: end; margin-top: auto;">
+            <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+        </div>
+    </div>
+
+    <div class="wrapper d-flex flex-column min-vh-100">
+        <header class="header header-sticky p-0 mb-4">
+            <div class="container-fluid border-bottom px-4">
+                <button class="header-toggler" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+                    <svg class="icon icon-lg">
+                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-menu"></use>
+                    </svg>
+                </button>
+                <ul class="header-nav d-none d-lg-flex">
+                    <li class="nav-item"><a class="nav-link" href="actualites.html">Actualités</a></li>
+                    <li class="nav-item"><a class="nav-link" href="base_clients.html">Base Clients</a></li>
+                    <li class="nav-item"><a class="nav-link" href="base_annonces.html">Base Annonces</a></li>
+                    <li class="nav-item"><a class="nav-link" href="chat.html">Chat et appels</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calendrier.html">Calendrier</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mes_ventes.html">Mes ventes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="centre_contact.html">Centre de contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="analytique.html">Analytique</a></li>
+                </ul>
+                <br>
+                
+                <ul class="header-nav ms-auto">
+                    
+                    <li class="nav-item"><a class="nav-link">
+                        <svg class="icon icon-lg">
+                            <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-bell"></use>
+                        </svg></a></li>
+                    <li class="nav-item"><a class="nav-link" >
+                        <svg class="icon icon-lg">
+                            <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-list-rich"></use>
+                        </svg></a></li>
+                    <li class="nav-item"><a class="nav-link">
+                        <svg class="icon icon-lg">
+                            <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-envelope-open"></use>
+                        </svg></a></li>
+                </ul>
+                <ul class="header-nav">
+                    <li class="nav-item py-1">
+                        <div class="vr h-100 mx-2 text-body text-opacity-75"></div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-link nav-link py-2 px-2 d-flex align-items-center" type="button" aria-expanded="false" data-coreui-toggle="dropdown">
+                            <svg class="icon icon-lg theme-icon-active">
+                                <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-contrast"></use>
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" style="--cui-dropdown-min-width: 8rem;">
+                            <li>
+                                <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="light">
+                                    <svg class="icon icon-lg me-3">
+                                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-sun"></use>
+                                    </svg>Light
+                                </button>
+                            </li>
+                            <li>
+                                <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="dark">
+                                    <svg class="icon icon-lg me-3">
+                                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-moon"></use>
+                                    </svg>Dark
+                                </button>
+                            </li>
+                            <li>
+                                <button class="dropdown-item d-flex align-items-center active" type="button" data-coreui-theme-value="auto">
+                                    <svg class="icon icon-lg me-3">
+                                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-contrast"></use>
+                                    </svg>Auto
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item py-1">
+                        <div class="vr h-100 mx-2 text-body text-opacity-75"></div>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link py-0 pe-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <div class="avatar avatar-md"><img class="avatar-img" src="assets/img/avatars/8.jpg" alt="user@email.com"></div></a>
+                        <div class="dropdown-menu dropdown-menu-end pt-0">
+                            <div class="dropdown-header bg-body text-center"><strong>Mon compte</strong></div>
+                            <a class="dropdown-item">
+                                <svg class="icon icon-lg"> 
+                                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-bell"></use>
+                                </svg> Notificatipon
+                            </a>
+                            
+                            <a class="dropdown-item">
+                                <svg class="icon icon-lg"> 
+                                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-group"></use>
+                                </svg> Chat et appels
+                            </a>
+                            
+                            <a class="dropdown-item">
+                                <svg class="icon icon-lg"> 
+                                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-list-rich"></use>
+                                </svg> Calendrier
+                            </a>
+
+                            <a class="dropdown-item">
+                                <svg class="icon icon-lg"> 
+                                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-balance-scale"></use>
+                                </svg> Mes ventes
+                            </a>
+
+                            </a>
+                            <div class="dropdown-header bg-body text-center"><strong>Paramètres</strong></div>
+                            
+
+                            <a class="dropdown-item"> 
+                                <svg class="icon me-2">
+                                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-user"></use>
+                                </svg>Profil
+                            </a>
+
+                            <a class="dropdown-item">
+                                <svg class="icon me-2">
+                                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-lock-locked"></use>
+                                </svg>Déconnexion
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div style="position: relative; left: 45%;">
+                <a href="actualites.html">Actualités</a> / <a href="calendrier.html">Calendrier</a> 
+            </div>
+        </header>
+
+        <div class="body flex-grow-1 px-3">
+            <div class="container-lg">
+                <h4 class="mb-4">Calendrier</h4>
+                <div id="calendar"></div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row justify-content-between">
+                    <div class="col-auto">© 2024 Random Company</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                events: [
+    {
+        title: 'Visite d\'appartement - Client Dupont',
+        start: '2024-10-05T14:00:00',
+        end: '2024-10-05T15:00:00'
+    },
+    {
+        title: 'Réunion d\'équipe',
+        start: '2024-10-10T09:00:00',
+        end: '2024-10-10T10:00:00'
+    },
+    {
+        title: 'Journée Portes Ouvertes',
+        start: '2024-10-12'
+    },
+    {
+        title: 'Suivi de dossier - Client Martin',
+        start: '2024-10-15T10:30:00',
+        end: '2024-10-15T11:30:00'
+    },
+    {
+        title: 'Présentation de biens à l\'agence',
+        start: '2024-10-18T13:00:00',
+        end: '2024-10-18T16:00:00'
+    },
+    {
+        title: 'Inspection de propriété - Client Lefèvre',
+        start: '2024-10-20T09:30:00',
+        end: '2024-10-20T11:30:00'
+    },
+    {
+        title: 'Formation Logiciel CRM',
+        start: '2024-10-22T10:00:00',
+        end: '2024-10-22T12:00:00'
+    },
+    {
+        title: 'Appel de suivi - Client Bernard',
+        start: '2024-10-25T15:30:00'
+    },
+    {
+        title: 'Rencontre avec le notaire',
+        start: '2024-10-27T10:00:00',
+        end: '2024-10-27T11:00:00'
+    },
+    {
+        title: 'Renouvellement d\'annonces',
+        start: '2024-10-30'
+    }
+]
+
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="Page de Connexion">
+    <title>Connexion</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/examples.css" rel="stylesheet">
+    <script src="js/config.js"></script>
+    <script src="js/color-modes.js"></script>
+</head>
+
+<body>
+    <div class="sidebar sidebar-dark sidebar-fixed border-end" style="overflow-y: auto;" id="sidebar">
+        <div class="sidebar-header border-bottom">
+            <div class="sidebar-brand">
+                <img src="assets/img/logo.png" width="150" height="50" alt="logo random">
+            </div>
+            <button class="btn-close d-lg-none" type="button" data-coreui-dismiss="offcanvas" aria-label="Close" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()"></button>
+        </div>
+        <div>
+            <ul class="sidebar-nav" data-coreui="navigation" data-simplebar>
+                <li class="nav-title">Informations</li>
+                <li class="nav-item"><a class="nav-link" href="actualites.html">Actualités</a></li>
+                <li class="nav-title">Gestion des Clients</li>
+                <li class="nav-item"><a class="nav-link" href="base_clients.html">Base Clients</a></li>
+                <li class="nav-item"><a class="nav-link" href="base_annonces.html">Base Annonces</a></li>
+                <li class="nav-title">Communication</li>
+                <li class="nav-item"><a class="nav-link" href="chat.html">Chat et appels</a></li>
+                <li class="nav-title">Outils</li>
+                <li class="nav-item"><a class="nav-link" href="calendrier.html">Calendrier</a></li>
+                <li class="nav-item"><a class="nav-link" href="mes_ventes.html">Mes ventes</a></li>
+                <li class="nav-item"><a class="nav-link" href="centre_contact.html">Centre de contact</a></li>
+                <li class="nav-title">Analytique</li>
+                <li class="nav-item"><a class="nav-link" href="analytique.html">Analytique</a></li>
+            </ul>
+        </div>
+        
+        <div class="sidebar-footer border-top d-none d-md-flex" style="display: flex; justify-content: flex-start; align-items: end; margin-top: auto;">
+            <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+        </div>
+    </div>
+    <header class="header header-sticky p-0 mb-4">
+        <div class="container-fluid border-bottom px-4">
+            <button class="header-toggler" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+                <svg class="icon icon-lg">
+                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-menu"></use>
+                </svg>
+            </button>
+            
+            <ul class="header-nav d-none d-lg-flex">
+                <li class="nav-item"><a class="nav-link" href="actualites.html">Actualités</a></li>
+                <li class="nav-item"><a class="nav-link" href="base_clients.html">Base Clients</a></li>
+                <li class="nav-item"><a class="nav-link" href="base_annonces.html">Base Annonces</a></li>
+                <li class="nav-item"><a class="nav-link" href="chat.html">Chat et appels</a></li>
+                <li class="nav-item"><a class="nav-link" href="calendrier.html">Calendrier</a></li>
+                <li class="nav-item"><a class="nav-link" href="mes_ventes.html">Mes ventes</a></li>
+                <li class="nav-item"><a class="nav-link" href="centre_contact.html">Centre de contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="analytique.html">Analytique</a></li>
+            </ul>
+            
+            <ul class="header-nav ms-auto">
+                <li class="nav-item"><a class="nav-link">
+                    <svg class="icon icon-lg">
+                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-bell"></use>
+                    </svg>
+                </a></li>
+                <li class="nav-item"><a class="nav-link">
+                    <svg class="icon icon-lg">
+                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-list-rich"></use>
+                    </svg>
+                </a></li>
+                <li class="nav-item"><a class="nav-link">
+                    <svg class="icon icon-lg">
+                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-envelope-open"></use>
+                    </svg>
+                </a></li>
+            </ul>
+            
+            <ul class="header-nav">
+                <li class="nav-item py-1">
+                    <div class="vr h-100 mx-2 text-body text-opacity-75"></div>
+                </li>
+                <li class="nav-item dropdown">
+                    <button class="btn btn-link nav-link py-2 px-2 d-flex align-items-center" type="button" aria-expanded="false" data-coreui-toggle="dropdown">
+                        <svg class="icon icon-lg theme-icon-active">
+                            <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-contrast"></use>
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" style="--cui-dropdown-min-width: 8rem;">
+                        <li>
+                            <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="light">
+                                <svg class="icon icon-lg me-3">
+                                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-sun"></use>
+                                </svg>Light
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="dark">
+                                <svg class="icon icon-lg me-3">
+                                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-moon"></use>
+                                </svg>Dark
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item d-flex align-items-center active" type="button" data-coreui-theme-value="auto">
+                                <svg class="icon icon-lg me-3">
+                                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-contrast"></use>
+                                </svg>Auto
+                            </button>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item py-1">
+                    <div class="vr h-100 mx-2 text-body text-opacity-75"></div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link py-0 pe-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <div class="avatar avatar-md"><img class="avatar-img" src="assets/img/avatars/8.jpg" alt="user@email.com"></div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end pt-0">
+                        <div class="dropdown-header bg-body text-center"><strong>Mon compte</strong></div>
+                        <a class="dropdown-item">
+                            <svg class="icon icon-lg">
+                                <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-bell"></use>
+                            </svg> Notification
+                        </a>
+                        <a class="dropdown-item">
+                            <svg class="icon icon-lg">
+                                <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-group"></use>
+                            </svg> Chat et appels
+                        </a>
+                        <a class="dropdown-item">
+                            <svg class="icon icon-lg">
+                                <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-list-rich"></use>
+                            </svg> Calendrier
+                        </a>
+                        <a class="dropdown-item">
+                            <svg class="icon icon-lg">
+                                <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-balance-scale"></use>
+                            </svg> Mes ventes
+                        </a>
+                        <div class="dropdown-header bg-body text-center"><strong>Paramètres</strong></div>
+                        <a class="dropdown-item"> 
+                            <svg class="icon me-2">
+                                <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-user"></use>
+                            </svg>Profil
+                        </a>
+                        <a class="dropdown-item">
+                            <svg class="icon me-2">
+                                <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-lock-locked"></use>
+                            </svg>Déconnexion
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div style="position: relative; left: 45%;">
+            <a href="log-in.html">Connexion</a>
+        </div>
+    </header>
+    
+
+    <div class="container d-flex justify-content-center align-items-center" style="height: calc(100vh - 56px);">
+        <div class="card" style="width: 400px;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Bienvenue</h5>
+                <form>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Nom d'utilisateur</label>
+                        <input type="text" class="form-control" id="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Mot de passe</label>
+                        <input type="password" class="form-control" id="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Se connecter</button>
+                </form>
+                <div class="text-center mt-3">
+                    <a href="forgot_password.html">Mot de passe oublié ?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row justify-content-between">
+                <div class="col-auto">© 2024 Random Company</div>
+                <div class="col-auto">Powered by <a href="https://coreui.io">CoreUI</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
+</body>
+</html>
